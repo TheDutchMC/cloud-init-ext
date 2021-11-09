@@ -2,14 +2,25 @@
 name = "cloud-init-ext"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.57"
 
 [dependencies]
 actix-web = "3.3.2"
 actix-cors = "0.5.4"
 actix-governor = "0.2.5"
 serde_yaml = "0.8.21"
+thiserror = "1.0.30"
+log = "0.4.14"
+env_logger = "0.9.0"
+anyhow = "1.0.45"
+dwbhk = "0.1.2"
+futures-util = "0.3.17"
+lazy_static = "1.4.0"
+
+[dependencies.tokio]
+version = "1.13.0"
+default-features = false
+features = ["rt", "rt-multi-thread"]
 
 [dependencies.serde]
 version = "1.0.130"
@@ -35,3 +46,6 @@ git = "https://github.com/TheDutchMC/refinery"
 
 [patch.crates-io.refinery-core]
 git = "https://github.com/TheDutchMC/refinery"
+
+[patch.crates-io.dwbhk]
+path = "../dwbhk-rs"
